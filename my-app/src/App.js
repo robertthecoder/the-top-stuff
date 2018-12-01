@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import SideBar from './components/SideBar.js';
+import SideBar from './components/sidebar.js';
 import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
@@ -18,12 +18,12 @@ class App extends Component {
           <div>
             <SideBar></SideBar>
             <Switch>
-              <Route exact path="/" component={Home}/>
-              <Route path="/About" component={About}/>
-              <Route path="/TopMusic" component={TopMusic}/>
-              <Route path="/TopNews" component={TopNews}/>
-              <Route path="/TopFood" component={TopFood}/>
-              <Route path="/SavedStuff" component={SavedStuff}/>
+              <Route exact path="/" component={Home} />
+              <Route path="/About" component={About} />
+              <Route path="/TopMusic" component={TopMusic} />
+              <Route path="/TopNews" component={TopNews} />
+              <Route path="/TopFood" component={TopFood} />
+              <Route path="/SavedStuff" component={SavedStuff} />
             </Switch>
           </div>
         </BrowserRouter>
