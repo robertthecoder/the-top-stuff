@@ -10,10 +10,10 @@ export default class SideBar extends Component {
 
     render() {
         let linkStyle = {
-            textDecoration:'none',
-            color:'#efefef'
+            textDecoration: 'none',
+            color: '#efefef'
         };
-        return(
+        return (
             <div className="sideBar">
                 <ul className="navList">
                     <li><Profile></Profile></li>
@@ -35,10 +35,10 @@ class Profile extends Component {
     }
 
     render() {
-        return(
+        return (
             <div className="profile">
                 <div className="avatar">
-                    <img className="dave" src={require("../img/oppa.jpg")} width="100" height="100"/>
+                    <img className="dave" src={require("../img/oppa.jpg")} width="100" height="100" />
                 </div>
                 <div className="displayName">
                     <h6>Dave Lee</h6>
