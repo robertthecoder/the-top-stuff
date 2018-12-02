@@ -22,7 +22,7 @@ export default class SideBar extends Component {
                     <NavLink to="/TopMusic"><li>Top Music</li></NavLink>
                     <NavLink to="/TopNews"><li>Top News</li></NavLink>
                     <NavLink to="/TopFood"><li>Top Food</li></NavLink>
-                    <NavLink to="/SavedStuff"><li>SavedStuff</li></NavLink>
+                    <NavLink to="/SavedStuff"><li>Saved Stuff</li></NavLink>
                 </ul>
             </div>
         );
