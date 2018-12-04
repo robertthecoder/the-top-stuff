@@ -249,9 +249,8 @@ class Category extends Component {
 
   render() {
     let data = this.props.data;
-    console.log("cat active: " + this.props.active)
     return (
-      <div className="categoryContainer" hidden={this.props.active}>
+      <div className="categoryContainer" hidden={true}>
         <div>
           <h5 aria-label="description">To fetch accurate restaurants that match your cravings, we'll need you to answer a few questions.</h5>
           <p aria-label="direction">Select your preferred category below.</p>
