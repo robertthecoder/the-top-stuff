@@ -35,7 +35,7 @@ div.sideBar {
   background-color:#ecf0f1;
   color:gray;
   width:0;
-  height:100vh;
+  height:100%;
   position:fixed;
   display:flex;
   justify-content: center;
@@ -91,7 +91,7 @@ div.rightContainer {
   position:relative;
   top:0;
   left:20vw;
-  height:100vh;
+  height:100%;
   width:80vw;
   display:flex;
   justify-content: center;
