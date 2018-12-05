@@ -172,7 +172,7 @@ class Intro extends Component {
     return(
       <div hidden={this.props.active} className="introContainer">
         <div className="introContent">
-          <h5 aria-label="description"><strong>Food for Thoughts</strong> is an app that helps users decide what restaurant to eat at.</h5>
+          <h5 aria-label="description"><strong>Top Food</strong> will help you pick from the top restaurants around you.</h5>
           <p aria-label="direction">Input your city name below to get started!</p>
         </div>
         <div className="zipMoney">
