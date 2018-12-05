@@ -31,12 +31,12 @@
   }
 }
 
+/*position:fixed*/
 div.sideBar {
   background-color:#ecf0f1;
   color:gray;
   width:0;
-  height:100vh;
-  position:fixed;
+  height:auto;
   display:flex;
   justify-content: center;
   align-items: flex-start;
@@ -86,11 +86,13 @@ div.sideBar ul.navList li {
     transform:scale(1);
   }
 }
-
+/*
+left:20vw;
+height:100vh;
+width:80vw;
+*/
 div.rightContainer {
   position:relative;
-  top:0;
-  left:20vw;
   height:100%;
   min-height:100vh;
   width:80vw;
@@ -103,6 +105,10 @@ div.rightContainer {
   opacity:0;
   animation:show .1s forwards;
   animation-delay:.75s;
+}
+
+.pageContainer {
+  display: flex;
 }
 
 @keyframes show {
@@ -120,7 +126,7 @@ div.rightContainer #star {
 
 img.dave {
   border-radius:50%;
-  border:3px solid white;    
+  border:3px solid white;
 }
 
 div.profile {

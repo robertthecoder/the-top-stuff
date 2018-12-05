@@ -305,13 +305,18 @@ class CuisineList extends Component {
     this.props.catID(this.state.categoryIDs);
   }
 
+  active = (event) => {
+    let element = event.target;
+    element.style.backgroundColor = "#f39c12";
+  }
+
   render() {
     let data = this.props.data.category;
     console.log(data);
     let categories = data.map(category => {
       let comp = 
           <Col xs={12} md={3}>
-            <Card category={category}></Card>
+            <Card onClick={this.active} category={category}></Card>
           </Col>
       
       return comp;
@@ -346,7 +351,7 @@ class Restaurants extends Component {
   handleClick = (event) => {
     console.log(event);
     console.log(event.currentTarget);
-    event.target.style.backgroundColor = "#f39c12";
+    event.currentTarget.style.backgroundColor = "#f39c12";
     this.state.eliminated.push(event.currentTarget.getAttribute("data-key"));
   };
 
