@@ -74,7 +74,7 @@ class Food extends Component {
     return (
       <div className="bodyContainer">
         <div className="container">
-          <h1 aria-label="title">Food for Thought</h1>
+          <h1 aria-label="title">Top Food</h1>
           <Intro active={this.state.introComp} priceRange={this.handlePrice} data={this.handle}></Intro>
           <Category idChosen={this.chosen} data={this.state} active={this.state.categoryComp}></Category>
           <Restaurants restaurantsChosen={this.chosenRestaurants}active={this.state.restaurantsComp} data={this.state}></Restaurants>
@@ -250,7 +250,7 @@ class Category extends Component {
   render() {
     let data = this.props.data;
     return (
-      <div className="categoryContainer" hidden={true}>
+      <div className="categoryContainer" hidden={this.props.active}>
         <div>
           <h5 aria-label="description">To fetch accurate restaurants that match your cravings, we'll need you to answer a few questions.</h5>
           <p aria-label="direction">Select your preferred category below.</p>
