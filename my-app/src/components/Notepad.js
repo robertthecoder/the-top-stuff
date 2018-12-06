@@ -16,6 +16,7 @@ export default class Notepad extends Component {
                     <label>Note:</label>
                     <textarea></textarea>
                 </div>
+                <button>Save</button>
             </div>
         );
     }
