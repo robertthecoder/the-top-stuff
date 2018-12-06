@@ -74,7 +74,7 @@ class Food extends Component {
     return (
       <div className="bodyContainer">
         <div className="container">
-          <h1 aria-label="title">Food for Thought</h1>
+          <h1 aria-label="title">Top Food</h1>
           <Intro active={this.state.introComp} priceRange={this.handlePrice} data={this.handle}></Intro>
           <Category idChosen={this.chosen} data={this.state} active={this.state.categoryComp}></Category>
           <Restaurants restaurantsChosen={this.chosenRestaurants}active={this.state.restaurantsComp} data={this.state}></Restaurants>
@@ -172,7 +172,7 @@ class Intro extends Component {
     return(
       <div hidden={this.props.active} className="introContainer">
         <div className="introContent">
-          <h5 aria-label="description"><strong>Food for Thoughts</strong> is an app that helps users decide what restaurant to eat at.</h5>
+          <h5 aria-label="description"><strong>Top Food</strong> will help you pick from the top restaurants around you.</h5>
           <p aria-label="direction">Input your city name below to get started!</p>
         </div>
         <div className="zipMoney">
@@ -250,7 +250,7 @@ class Category extends Component {
   render() {
     let data = this.props.data;
     return (
-      <div className="categoryContainer" hidden={true}>
+      <div className="categoryContainer" hidden={this.props.active}>
         <div>
           <h5 aria-label="description">To fetch accurate restaurants that match your cravings, we'll need you to answer a few questions.</h5>
           <p aria-label="direction">Select your preferred category below.</p>
@@ -305,13 +305,18 @@ class CuisineList extends Component {
     this.props.catID(this.state.categoryIDs);
   }
 
+  active = (event) => {
+    let element = event.target;
+    element.style.backgroundColor = "#f39c12";
+  }
+
   render() {
     let data = this.props.data.category;
     console.log(data);
     let categories = data.map(category => {
       let comp = 
           <Col xs={12} md={3}>
-            <Card category={category}></Card>
+            <Card onClick={this.active} category={category}></Card>
           </Col>
       
       return comp;
@@ -346,7 +351,7 @@ class Restaurants extends Component {
   handleClick = (event) => {
     console.log(event);
     console.log(event.currentTarget);
-    event.target.style.backgroundColor = "#f39c12";
+    event.currentTarget.style.backgroundColor = "#f39c12";
     this.state.eliminated.push(event.currentTarget.getAttribute("data-key"));
   };
 

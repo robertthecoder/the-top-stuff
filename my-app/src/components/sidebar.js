@@ -38,10 +38,10 @@ class Profile extends Component {
         return (
             <div className="profile">
                 <div className="avatar">
-                    <img className="dave" src={require("../img/oppa.jpg")} width="100" height="100" />
+                    <img className="dave" src={require("../img/dawg.png")} width="125" height="100" />
                 </div>
                 <div className="displayName">
-                    <h6>Dave Lee</h6>
+                    <h6>Hello friend</h6>
                 </div>
             </div>
         );
