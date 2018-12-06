@@ -4,7 +4,7 @@ import './musicRespStyle.css'
 
 export default class TopMusic extends Component {
     constructor(props) {
-        super();
+        super(props);
     }
 
     render() {
