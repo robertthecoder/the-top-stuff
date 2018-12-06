@@ -36,7 +36,12 @@ div.sideBar {
   background-color:#ecf0f1;
   color:gray;
   width:0;
+<<<<<<< HEAD
   height:auto;
+=======
+  height:100%;
+  position:fixed;
+>>>>>>> 00152991aeb314295a88661746f5c5a0f344de21
   display:flex;
   justify-content: center;
   align-items: flex-start;
@@ -94,7 +99,13 @@ width:80vw;
 div.rightContainer {
   position:relative;
   top:0;
+<<<<<<< HEAD
 
+=======
+  left:20vw;
+  height:100%;
+  width:80vw;
+>>>>>>> 00152991aeb314295a88661746f5c5a0f344de21
   display:flex;
   justify-content: center;
   align-items: center;
