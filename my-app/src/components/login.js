@@ -38,7 +38,7 @@ export default class login extends Component {
 
 	render() {
 		return (
-			<div className="rightContainer">
+			<div className="loginContainer">
 				<Jumbotron className="jumbo">
 					<h1>The Top Stuff</h1>
 					<hr />
