@@ -211,3 +211,21 @@ hr {
     margin-left: -3px;
     top: 0;
 }
+
+div.notepad div.title {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+div.notepad div.note textarea {
+  width:15vw;
+  max-width:15vw;
+  max-height:17vh;
+}
+
+div.notepad div.note {
+  display:flex;
+  flex-wrap:wrap;
+  padding:15px;
+}
