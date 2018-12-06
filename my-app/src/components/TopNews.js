@@ -125,12 +125,12 @@ class Results extends Component {
     if (typeof this.props.news != "undefined") {
       var response = this.props.news.slice(0, this.props.numArticles)
       var newsArtics = response.map((newsArt, index) => <div id="article-data">
-        <h2><span className="label label-primary">{index + 1}</span><a href={newsArt.url}><strong>{newsArt.title}</strong></a></h2>
+        <h2><span className="label label-primary">{index + 1}</span><a href={newsArt.url} target="_blank"><strong>{newsArt.title}</strong></a></h2>
         <div className='row justify-content-between' style={{ margin: 0 }}>
           <div aria-label="information about news" className='col-sm-8'>
             <h3> {newsArt.description}</h3>
-            <p><strong>Source:</strong> {newsArt.source.name}</p>
-            <p>{newsArt.content}</p>
+            <p id ="article-source"><strong>Source:</strong> {newsArt.source.name}</p>
+            <p id="article-desc">{newsArt.content}</p>
           </div>
           <div aria-label="image for the news" className="col-sm-4">
             <img src={newsArt.urlToImage} alt={newsArt.title} />
