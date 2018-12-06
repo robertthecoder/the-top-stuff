@@ -12,6 +12,8 @@ export default class Home extends Component {
                 <h1>What is this website about?</h1>
                 <p>Discover the "Top Stuff" to your heart's content, anything from popping music to scandalous news to delicious restaurants. </p>
                 <p>When you discover something, you can add it to the the notebook on the left. </p>
+
+                <h4>Recent Saved Notes:</h4>
             </div>
         );
     }
