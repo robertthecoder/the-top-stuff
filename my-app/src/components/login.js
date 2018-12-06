@@ -44,27 +44,27 @@ export default class login extends Component {
 
 						<Col sm="2">
 							<div className="lilUziVert"></div>
-						</Col>	
+						</Col>
 
 						<Col sm="5">
-	                        <form>
-							  <div className="loginForm">
-							    <h3>Sign-in</h3>
-							    <p>Already a member? Sign-in below.</p>
-							    <hr/>
+	              <form>
+  							  <div className="loginForm">
+  							    <h3>Sign-in</h3>
+  							    <p>Already a member? Sign-in below.</p>
+  							    <hr/>
 
-							    <label for="email"><b>Email</b></label>
-							    <br/>
-							    <input type="text" placeholder="Enter Email" name="email" required />
-							    <br/>
-							    <label for="pass"><b>Password</b></label>
-							    <br/>
-							    <input type="password" placeholder="Enter Password" name="pass" required />
+  							    <label for="email"><b>Email</b></label>
+  							    <br/>
+  							    <input type="text" placeholder="Enter Email" name="email" required />
+  							    <br/>
+  							    <label for="pass"><b>Password</b></label>
+  							    <br/>
+  							    <input type="password" placeholder="Enter Password" name="pass" required />
 
-							    <hr/>
-							    <button type="submit" className="registerbtn">Login</button>
-							  </div>
-							</form>
+  							    <hr/>
+  							    <button type="submit" className="registerbtn">Login</button>
+  							  </div>
+  							</form>
 						</Col>
 
 						<br/>
