@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import Notepad from './Notepad'
 
 export default class SideBar extends Component {
 
@@ -28,6 +29,7 @@ export default class SideBar extends Component {
                     <NavLink to="/SavedStuff"><li>Saved Stuff</li></NavLink>
 
                     {this.props.children}
+                    <li><Notepad></Notepad></li>
                 </ul>
             </div>
         );

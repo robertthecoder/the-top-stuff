@@ -144,7 +144,7 @@ class App extends Component {
                 {<li className="btn btn-warning" onClick={this.handleSignOut} >LOG OUT {this.state.user.displayName}</li>}
               </SideBar>
               <Switch>
-                <Route exact path="/" component={TopMusic} />
+                <Route exact path="/" component={Home} />
                 <Route path="/About" component={About} />
                 <Route path="/TopMusic" component={TopMusic} />
                 <Route path="/TopNews" component={TopNews} />
