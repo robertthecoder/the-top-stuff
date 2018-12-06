@@ -44,6 +44,11 @@ div.sideBar {
   z-index:1;
 }
 
+.displayName h6{
+  color:rgb(2, 161, 2);
+  font-size: 22px;
+}
+
 @keyframes slideIn {
   0% {
     width:0;
@@ -101,6 +106,7 @@ div.rightContainer {
   align-items: center;
   flex-direction: column;
   background-color:#3498db;
+  /* background-color:#949494; */
   color:white;
   opacity:0;
   animation:show .1s forwards;
@@ -131,6 +137,9 @@ img.dave {
 
 div.profile {
   padding:3rem;
+  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  background-color: rgb(255, 255, 255);
 }
 
 .jumbo {

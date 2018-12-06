@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 export default class TopMusic extends Component {
     constructor(props) {
-        super();
+        super(props);
     }
 
     render() {
-        return(
+        return (
             <div className="rightContainer">
                 <h1>Top Music</h1>
             </div>
