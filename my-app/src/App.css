@@ -204,6 +204,7 @@ div.loginContainer {
   opacity:0;
   animation:show .1s forwards;
   animation-delay:.75s;
+  font-size:2rem;
 }
 
 .pageContainer {

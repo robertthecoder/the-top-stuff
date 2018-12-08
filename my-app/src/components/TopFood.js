@@ -35,6 +35,7 @@ class Food extends Component {
     }
   }
 
+  //Toggles category questions to pop up
   handle = (state) => {
     this.setState(state);
     this.setState({
@@ -43,6 +44,7 @@ class Food extends Component {
     });
   } 
 
+  //Toggles restaurant grid
   chosen = (state) => {
     this.setState(state);
     this.setState({
@@ -54,6 +56,7 @@ class Food extends Component {
     
   }
 
+  //Toggles the chosen restaurant for user
   chosenRestaurants = (state) => {
     this.setState(state);
     this.setState({
@@ -66,8 +69,6 @@ class Food extends Component {
 
   handlePrice = (state) => {
     this.setState({price:state.price});
-    console.log("money");
-    console.log(this.state);
   }
   
   render() {
@@ -86,6 +87,7 @@ class Food extends Component {
   }
 }
 
+//Contains introductory information and enter zip code
 class Intro extends Component {
   constructor(props) {
     super();
@@ -101,9 +103,9 @@ class Intro extends Component {
     this.setState({
       cityName:target.value
     })
-    console.log(this.state)
   }
 
+  //Grabs data based off city
   fetchCityData() {
     let cityName = this.state.cityName;
     if(cityName.length > 0) {
@@ -129,6 +131,7 @@ class Intro extends Component {
     }
   }
 
+  //Grabs different categories of restaurants based off city
   fetchCuisine(cityID) {
     let url = 'https://developers.zomato.com/api/v2.1/cuisines?city_id=' + cityID;
     return fetch(url, {
@@ -232,6 +235,7 @@ class Price extends Component {
   }
 }
 
+//Grid of different categories of restaurants
 class Category extends Component {
   constructor(props) {
     super();
@@ -242,8 +246,6 @@ class Category extends Component {
 
   handle = (id) => {
     this.state.categoryID.push(id);
-    console.log("donut");
-    console.log(this.state);
     this.props.idChosen(this.state);
   }
 
@@ -261,6 +263,7 @@ class Category extends Component {
   }
 }
 
+//Single card that holds information about either category or restaurant
 class Card extends Component {
   constructor(props) {
     super();
@@ -286,6 +289,7 @@ class Card extends Component {
   }
 }
 
+//List of categories of food
 class CuisineList extends Component {
   constructor(props) {
     super();
@@ -300,8 +304,6 @@ class CuisineList extends Component {
   }
 
   send = () => {
-    console.log("sent");
-    console.log(this.state.categoryIDs);
     this.props.catID(this.state.categoryIDs);
   }
 
@@ -312,7 +314,6 @@ class CuisineList extends Component {
 
   render() {
     let data = this.props.data.category;
-    console.log(data);
     let categories = data.map(category => {
       let comp = 
           <Col xs={12} md={3}>
@@ -339,6 +340,7 @@ class CuisineList extends Component {
   }
 }
 
+//List of different types of restaurants based off filters
 class Restaurants extends Component {
   constructor(props) {
     super();
@@ -349,8 +351,6 @@ class Restaurants extends Component {
   }
 
   handleClick = (event) => {
-    console.log(event);
-    console.log(event.currentTarget);
     event.currentTarget.style.backgroundColor = "#f39c12";
     this.state.eliminated.push(event.currentTarget.getAttribute("data-key"));
   };
@@ -392,10 +392,6 @@ class Restaurants extends Component {
           </Col>
           return comp;
         })
-        /*
-        list = list.filter(obj => {
-          return obj.props.category.price == range;
-        });*/
         this.setState({restaurants:list});
         return list;
       })
@@ -438,6 +434,7 @@ class Restaurants extends Component {
   }
 }
 
+//Chosen restaurant based off filters
 class Results extends Component {
   constructor(props) {
     super();
@@ -457,7 +454,7 @@ class Results extends Component {
       console.log("carrot");
       console.log(restaurants[index]);
       console.log(restaurants[index].props);
-      result = <div><h6>Based off your preferences, this is the most ideal restaurant for you!</h6>
+      result = <div><h2>Based off your preferences, this is the most ideal restaurant for you!</h2>
       <Card category={restaurants[index].props.children.props.category}></Card></div>
     }
     

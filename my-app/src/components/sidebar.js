@@ -7,8 +7,6 @@ export default class SideBar extends Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props.user);
-        // this.state = {};
     }
 
 
@@ -18,8 +16,7 @@ export default class SideBar extends Component {
             textDecoration: 'none',
             color: '#efefef'
         };
-
-        console.log(this.props.displayName);
+        //Creates link to each section from the side navigation
         return (
             <div className="sideBar">
                 <ul className="navList">
@@ -29,7 +26,6 @@ export default class SideBar extends Component {
                     <NavLink to="/TopMusic"><li>Top Music</li></NavLink>
                     <NavLink to="/TopNews"><li>Top News</li></NavLink>
                     <NavLink to="/TopFood"><li>Top Food</li></NavLink>
-                    <NavLink to="/SavedStuff"><li>Saved Stuff</li></NavLink>
 
                     {this.props.children}
                     <li><Notepad user={this.props.user}></Notepad></li>
@@ -42,11 +38,9 @@ export default class SideBar extends Component {
 class Profile extends Component {
     constructor(props) {
         super(props);
-        // console.log(this.props.displayName);
     }
 
     render() {
-        // console.log(this.props);
         return (
             <div className="profile">
                 <div className="avatar">

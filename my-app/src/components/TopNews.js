@@ -67,12 +67,10 @@ export default class TopNews extends Component {
         console.log(error)
       })
     }
-    console.log("fetchnews")
   }
 
   handleClick(e) {
     e.preventDefault();
-    console.log(e.target.id)
     if (e.target.id == "runQuery") {
       this.fetchNews();
     } else {

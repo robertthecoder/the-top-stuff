@@ -31,6 +31,7 @@ div.bodyContainer {
   align-items:center;
   background-color:#e74c3c;
   color:#efefef;
+  font-size:2rem;
 }
 
 div.container {
@@ -44,7 +45,7 @@ div.container {
 
 div.container h1 {
   display:flex;
-  font-size:5rem;
+  font-size:7rem;
   width:100%;
   justify-content:center;
   animation:foodIn .5s ease-in;
@@ -64,6 +65,7 @@ div.container div.introContainer {
   opacity:0;
   animation:foodIn2 .5s ease-in forwards;
   animation-delay:.5s;
+  font-size:2rem;
 }
 
 @keyframes foodIn2 {

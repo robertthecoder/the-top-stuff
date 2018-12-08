@@ -12,7 +12,6 @@ export default class Home extends Component {
 
     componentDidMount() {
         this.notesRef = firebase.database().ref('Notes');
-        // console.log(this.chirpsRef);
 
         this.notesRef.on('value', (snapshot) => {
             this.setState({ notes: snapshot.val() });
@@ -25,7 +24,6 @@ export default class Home extends Component {
     render() {
 
         if (!this.state.notes) return null;
-        console.log(this.state.notes);
 
         let keys = Object.keys(this.state.notes);
 
@@ -37,6 +35,7 @@ export default class Home extends Component {
             return noteObj;
         });
 
+        //Renders out the saved notes
         let noteHtml = notes.map((note) => (
             <div className="rend-note">
                 <h5>
@@ -46,13 +45,6 @@ export default class Home extends Component {
                 <p><h6>- Anonymous</h6></p>
             </div>
         ));
-
-
-        // });
-
-
-        console.log(notes);
-        console.log(this.state.notes);
 
         return (
             <div className="gray-bg">
@@ -73,26 +65,6 @@ export default class Home extends Component {
 
                     <div className="flex-cont">
                         {noteHtml}
-
-                        {/* <div className="rend-note">
-                            <h5>
-                                Title
-                            </h5>
-                            <p>Body</p>
-                        </div>
-                        <div className="rend-note">
-                            <h5>
-                                Title
-                            </h5>
-                            <p>Body</p>
-                        </div>
-                        <div className="rend-note">
-                            <h5>
-                                Title
-                            </h5>
-                            <p>Body</p>
-                        </div> */}
-
                     </div>
 
                 </div>

@@ -37,33 +37,16 @@ class App extends Component {
 
   handleSignUp = (email, password, handle, avatar) => {
     this.setState({ errorMessage: null }); //clear any old errors
-    console.log(email);
-    console.log(password);
-    console.log(handle);
 
     this.state.handle = handle;
-    console.log(this.state.handle);
 
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((user) => {
-
-        // user.updateProfile({
-        //   displayName: "displayName works!",
-        //   photoUrl: avatar
-        // })
-        //   .catch((err2) => {
-        //     this.setState({ errorMessage: err2.message });
-        //   });
       })
       .catch((err) => {
         this.setState({ errorMessage: err.message });
       });
-
-
-
-
-    console.log(this.state.user);
   }
 
   //A callback function for logging in existing users
@@ -77,17 +60,12 @@ class App extends Component {
   componentDidMount() {
     this.unReg = firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        // console.log(user.displayName);
         this.setState({ user: user });
       } else {
         this.setState({ user: null })
       }
       this.setState({ loading: false });
     });
-
-
-
-    console.log(this.state.user);
   }
   componentWillUnmount() {
     this.unReg();
@@ -97,10 +75,6 @@ class App extends Component {
 
   render() {
     let content = null; //content to render
-
-    // this.state.user = null;
-
-
     if (this.state.loading) {
       content = (<div className="text-center">
         <i className="fa fa-spinner fa-spin fa-3x" aria-label="Connecting..."></i>
@@ -110,31 +84,18 @@ class App extends Component {
         <div className="container">
           {<Login signUpCallback={this.handleSignUp}
             signInCallback={this.handleSignIn} />}
-
-
         </div>
       );
     }
     else { //if logged in, show welcome message
-      console.log(this.state.user);
       var user = firebase.auth().currentUser;
-
-      console.log(this.state.handle);
-
       user.updateProfile({
         displayName: this.state.handle,
-        // photoURL: "https://example.com/jane-q-user/profile.jpg"
       }).then(function () {
         // Update successful.
       }).catch(function (error) {
         // An error happened.
       });
-
-      console.log(user);
-      console.log(this.state.user);
-
-
-
       content = (
         <div className="App" >
 
