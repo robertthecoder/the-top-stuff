@@ -6,8 +6,9 @@ export default class Notepad extends Component {
     }
 
     render() {
-        return(
+        return (
             <div className="notepad">
+                <h2>Your Notebook</h2>
                 <div className="title">
                     <label>Title:</label>
                     <input />
@@ -16,7 +17,7 @@ export default class Notepad extends Component {
                     <label>Note:</label>
                     <textarea></textarea>
                 </div>
-                <button>Save</button>
+                <button>Save this Note! :)</button>
             </div>
         );
     }
