@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import Notepad from './Notepad'
 
+import firebase from 'firebase/app';
+
 export default class SideBar extends Component {
 
     constructor(props) {
