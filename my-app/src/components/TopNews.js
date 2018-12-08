@@ -83,54 +83,54 @@ export default class TopNews extends Component {
   render() {
     return (
       <div aria-hidden="true" className="rightContainer" id="top">
-          <img src="images/news.jpg" alt="News text." style={{ width: '100%', height: '300px', padding: '0px'}} />
-          <div aria-label="panel to change parameters to filter news" class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title"><strong><i class="fa  fa-list-alt"></i>   Search Parameters</strong></h3>
-            </div>
-            <div class="panel-body">
-              <form role="form">
-                <div aria-label="input search text to get news" class="form-group">
-                  <label for="search">Search Term:</label>
-                  <input type="text" class="form-control" id="searchTerm" value={this.state.query} onChange={this.handleQueryChange} placeholder="Type a search term or simply hit Get Top News!" />
-                </div>
-
-                <div aria-label="select number of articles to display" class="form-group">
-                  <label for="pwd">Number of Articles to retrieve:</label>
-                  <select class="form-control" id="numArticles" onChange={this.handleNumChange}>
-                    <option value="1">1</option>
-                    <option value="5" selected>5</option>
-                    <option value="10">10</option>
-                    <option value="15">15</option>
-                    <option value="20">20</option>
-                  </select>
-                </div>
-
-                <button aria-label="button to get data" class="btn btn-primary" id="runQuery" onClick={this.handleClick} >Get Top News</button>
-                <button aria-label="button to clear news" type="button" class="btn btn-default" id="clearAll" onClick={this.handleClick}><i class="fa fa-trash"></i> Clear Results</button>
-              </form>
-            </div>
+        <img src="images/news.jpg" alt="News text." style={{ width: '100%', height: '300px', padding: '0px' }} />
+        <div aria-label="panel to change parameters to filter news" class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong><i class="fa  fa-list-alt"></i>   Search Parameters</strong></h3>
           </div>
-          <Results news={this.state.data} numArticles={this.state.numArticles} />
+          <div class="panel-body">
+            <form role="form">
+              <div aria-label="input search text to get news" class="form-group">
+                <label for="search">Search Term:</label>
+                <input type="text" class="form-control" id="searchTerm" value={this.state.query} onChange={this.handleQueryChange} placeholder="Type a search term or simply hit Get Top News!" />
+              </div>
+
+              <div aria-label="select number of articles to display" class="form-group">
+                <label for="pwd">Number of Articles to retrieve:</label>
+                <select class="form-control" id="numArticles" onChange={this.handleNumChange}>
+                  <option value="1">1</option>
+                  <option value="5" selected>5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                </select>
+              </div>
+
+              <button aria-label="button to get data" class="btn btn-primary" id="runQuery" onClick={this.handleClick} >Get Top News</button>
+              <button aria-label="button to clear news" type="button" class="btn btn-default" id="clearAll" onClick={this.handleClick}><i class="fa fa-trash"></i> Clear Results</button>
+            </form>
+          </div>
+        </div>
+        <Results news={this.state.data} numArticles={this.state.numArticles} />
       </div>
     )
   }
 }
 
 
-{/*The component displays the news in a formatted form. */}
+{/*The component displays the news in a formatted form. */ }
 class Results extends Component {
 
   render() {
     if (typeof this.props.news != "undefined") {
       var response = this.props.news.slice(0, this.props.numArticles)
       var newsArtics = response.map((newsArt, index) => <div id="article-data">
-        <h2><span className="label label-primary">{index + 1}</span><a href={newsArt.url}><strong>{newsArt.title}</strong></a></h2>
-        <div className='row justify-content-between' style={{margin:0}}>
+        <h2><span className="label label-primary">{index + 1}</span><a href={newsArt.url} target="_blank"><strong>{newsArt.title}</strong></a></h2>
+        <div className='row justify-content-between' style={{ margin: 0 }}>
           <div aria-label="information about news" className='col-sm-8'>
             <h3> {newsArt.description}</h3>
-            <p><strong>Source:</strong> {newsArt.source.name}</p>
-            <p>{newsArt.content}</p>
+            <p id ="article-source"><strong>Source:</strong> {newsArt.source.name}</p>
+            <p id="article-desc">{newsArt.content}</p>
           </div>
           <div aria-label="image for the news" className="col-sm-4">
             <img src={newsArt.urlToImage} alt={newsArt.title} />

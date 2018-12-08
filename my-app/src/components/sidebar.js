@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import Notepad from './Notepad'
 
+
 export default class SideBar extends Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props);
+        console.log(this.props.user);
         // this.state = {};
     }
+
+
 
     render() {
         let linkStyle = {
@@ -29,7 +32,7 @@ export default class SideBar extends Component {
                     <NavLink to="/SavedStuff"><li>Saved Stuff</li></NavLink>
 
                     {this.props.children}
-                    <li><Notepad></Notepad></li>
+                    <li><Notepad user={this.props.user}></Notepad></li>
                 </ul>
             </div>
         );
@@ -42,10 +45,8 @@ class Profile extends Component {
         // console.log(this.props.displayName);
     }
 
-
-
     render() {
-        console.log(this.props);
+        // console.log(this.props);
         return (
             <div className="profile">
                 <div className="avatar">

@@ -28,6 +28,26 @@ div.rightContainer #top {
   float:left;
 }
 
+#article-data h3{
+  font-size: 2.5rem;
+  color: black;
+}
+
+#article-source {
+  margin: 0 0 10px;
+  color:red;
+  font-size:2rem;
+}
+
+#article-desc{
+  font-size: 2.1rem;
+  margin: 0 0 10px;
+  color: midnightblue;
+}
+
+
+
+
 #articles{
   margin:0;
   width:100%;

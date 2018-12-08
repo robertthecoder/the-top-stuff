@@ -85,6 +85,8 @@ class App extends Component {
       this.setState({ loading: false });
     });
 
+
+
     console.log(this.state.user);
   }
   componentWillUnmount() {
@@ -114,7 +116,7 @@ class App extends Component {
       );
     }
     else { //if logged in, show welcome message
-      // console.log(this.state.user);
+      console.log(this.state.user);
       var user = firebase.auth().currentUser;
 
       console.log(this.state.handle);
@@ -140,7 +142,7 @@ class App extends Component {
             <div className="pageContainer">
 
 
-              <SideBar email={this.state.user.email} displayName={this.state.user.displayName} >
+              <SideBar user={this.state.user} email={this.state.user.email} displayName={this.state.user.displayName} >
                 {<li className="btn btn-warning" onClick={this.handleSignOut} >LOG OUT {this.state.user.displayName}</li>}
               </SideBar>
               <Switch>
