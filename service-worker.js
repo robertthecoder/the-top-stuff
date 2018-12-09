@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/robertthecoder/the-top-stuff/precache-manifest.eca65ffb5aadb1cfc118a8e5b675f588.js"
+  "/the-top-stuff/precache-manifest.c8b6d56b77adaf248ab758da9e7f2a08.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/robertthecoder/the-top-stuff/index.html", {
+workbox.routing.registerNavigationRoute("/the-top-stuff/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
